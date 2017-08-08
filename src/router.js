@@ -9,7 +9,7 @@ const router = (request, response) => {
 	const url = request.url.split('/')[1];
 
 	if (url === ''){
-		handler.handleHome 
+		handler.handleHome
 	} else if (url === 'public') {
 		handler.handlePublic
 	} else if (url === 'calendar') {
