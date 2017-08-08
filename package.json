@@ -1,0 +1,28 @@
+{
+  "name": "muncher-vass",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "directories": {
+    "test": "nyc istanbul cover tape /tests/blah.test.js | tap-spec",
+    "start": "node src/server.js",
+    "devStart": "nodemon src/server.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.11.0",
+    "nyc": "^11.1.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  },
+  "dependencies": {
+    "env2": "^2.2.0",
+    "pg": "^7.1.0",
+    "url": "^0.11.0"
+  }
+}
