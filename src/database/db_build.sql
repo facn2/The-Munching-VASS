@@ -20,16 +20,16 @@ CREATE TABLE participants (
   participant_id INTEGER
 );
 
-INSERT INTO cooking (date, chef_id, sous_chef_id, mael) VALUES
-('2017-08-10', 3, 2, "Maqluba"),
-('2017-08-11', 4, 3, "Rice and Tofu"),
-('2017-08-12', 2, 1, "Lasagna")
+INSERT INTO cooking (date, chef_id, sous_chef_id, meal) VALUES
+('2017-08-10', 3, 2, 'Maqluba'),
+('2017-08-11', 4, 3, 'Rice and Tofu'),
+('2017-08-12', 2, 1, 'Lasagna');
 
 INSERT INTO people (name) VALUES
 ('Amy'),
 ('Sajeda'),
 ('Stefano'),
-('Vered')
+('Vered');
 
 INSERT INTO participants (date_id, participant_id) VALUES
 (1, 3),
@@ -37,6 +37,6 @@ INSERT INTO participants (date_id, participant_id) VALUES
 (1, 4),
 (2, 4),
 (3, 3),
-(4, 1)
+(4, 1);
 
 COMMIT;
