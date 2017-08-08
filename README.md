@@ -59,5 +59,5 @@ date_id   | participant_id
 #### Our software architecture:
 Software Architecture
 
-#### Our app Sketch:
-Sketch
+#### Our app Wireframe:
+![alt text](./assets/wireframe.png)
