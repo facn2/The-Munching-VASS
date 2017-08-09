@@ -6,7 +6,7 @@ CREATE TABLE cooking (
   day TEXT NOT NULL,
   chef_id INTEGER,
   sous_chef_id INTEGER,
-  meal TEXT
+  meal TEXT,
   budget INTEGER DEFAULT 100
 );
 
@@ -21,7 +21,7 @@ CREATE TABLE participants (
   participant_id INTEGER
 );
 
-INSERT INTO cooking (day, chef_id, sous_chef_id, meal budget) VALUES
+INSERT INTO cooking (day, chef_id, sous_chef_id, meal, budget) VALUES
 ('Monday', 3, 2, 'Maqluba', 45),
 ('Tuesday', 4, 3, 'Rice and Tofu', 70),
 ('Wednesday', 2, 1, 'Lasagna', 60);

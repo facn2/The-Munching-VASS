@@ -5,7 +5,10 @@ var makeRequest = function(url, callback) {
 	var dbCall = new XMLHttpRequest();
 	dbCall.onreadystatechange = function () {
 		if (dbCall.readyState === 4 && dbCall.status === 200) {
-			callback(null, dbCall.responseText);
+			if (dbCall.responseText) {
+				callback(null, dbCall.responseText);
+				console.log("dbcall stuff" + dbCall.responseText);
+			}
 		} else {
 			callback('error' + dbCall.responseType);
 		}
@@ -19,7 +22,7 @@ var updateDom = function(err, data) {
 		console.log('Yikes error again blah');
 	}
 	const dataObj = JSON.parse(data);
-	console.log(dataObj);
+	console.log("dataobj ", dataObj);
 
 	dataObj.forEach(function(dataObj) {
 		var day = dataObj.day;
