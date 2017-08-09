@@ -5,16 +5,14 @@ const path = require('path');
 const querystring = require('querystring');
 const datajs = require('./queries/data.js');
 
-const handleHome = (response) => {
+const handleHome = (request, response) => {
     fs.readFile(__dirname + "/../public/index.html", function(error, file) {
         if (error) {
           response.writeHead(500, 'Content-Type:text/html');
           response.end('<h1>Sorry, there was a problem loading the homepage</h1>');
           console.log(error);
         } else {
-          response.writeHead(200, {
-              "Content-Type": "text/html"
-          });
+          response.writeHead(200, {"Content-Type": "text/html"});
           response.end(file);
         }
     });
@@ -41,7 +39,7 @@ const handlePublic = (request, response) => {
   })
 }
 
-const getData = () => {
+const getData = (request, response) => {
 	datajs.getData((err, res) => {
 		if (err) {
       return  console.log('Error querying database.');
@@ -53,7 +51,7 @@ const getData = () => {
 }
 
 
-const updateTable = () => {
+const updateTable = (request, response) => {
   let update = '';
   request.on('data', (chunk) => {
     update += chunk;

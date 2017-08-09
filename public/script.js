@@ -14,34 +14,33 @@ var makeRequest = function(url, callback) {
     dbCall.send();
 }
 
-
 var updateDom = function(err, data) {
 	if (err) {
-		console.log('Yikes error again blah')
+		console.log('Yikes error again blah');
 	}
-	const dataObj = JSON.parse(data)
-	console.log(dataObj)
+	const dataObj = JSON.parse(data);
+	console.log(dataObj);
 
 	dataObj.forEach(function(dataObj) {
-		var date = dataObj.date
-		var cellDate = firstRow.cells[0]
-		cellDate.innerHTML = date
+		var date = dataObj.date;
+		var cellDate = firstRow.cells[0];
+		cellDate.innerHTML = date;
 
-		var chef = dataObj.chef
-		var cellChef = firstRow.cells[1]
-		cellChef.innerHTML = chef
+		var chef = dataObj.chef;
+		var cellChef = firstRow.cells[1];
+		cellChef.innerHTML = chef;
 
-		var sousChef = dataObj.sousChef
-		var cellSousChef = firstRow.cells[2]
-		cellSousChef.innerHTML = sousChef
+		var sousChef = dataObj.sousChef;
+		var cellSousChef = firstRow.cells[2];
+		cellSousChef.innerHTML = sousChef;
 
-		var meal = dataObj.meal
-		var cellMeal = firstRow.cells[3]
-		cellMeal.innerHTML = meal
+		var meal = dataObj.meal;
+		var cellMeal = firstRow.cells[3];
+		cellMeal.innerHTML = meal;
 
-		var budget = dataObj.budget
-		var cellBudget = firstRow.cells[4]
-		cellBudget.innerHTML = budget
+		var budget = dataObj.budget;
+		var cellBudget = firstRow.cells[4];
+		cellBudget.innerHTML = budget;
 
 		//for attending, assuming that list of people within their own object
 		// var attending = dataObj.attending
@@ -49,4 +48,4 @@ var updateDom = function(err, data) {
 	})
 }
 
-makeRequest('/calender', updateDom)
+makeRequest('get-data', updateDom)
