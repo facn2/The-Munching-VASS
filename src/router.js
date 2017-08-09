@@ -10,7 +10,7 @@ const router = (request, response) => {
 		handler.handlePublic(request, response)
 	} else if (url === 'get-data') {
 		handler.getData(request, response);
-	} else if (url === '/update-data') {
+	} else if (url === 'update-data') {
 		handler.updateTable(request, response);
 	}
 

@@ -22,9 +22,9 @@ var updateDom = function(err, data) {
 	console.log(dataObj);
 
 	dataObj.forEach(function(dataObj) {
-		var date = dataObj.date;
-		var cellDate = firstRow.cells[0];
-		cellDate.innerHTML = date;
+		var day = dataObj.day;
+		var cellDay = firstRow.cells[0];
+		cellDay.innerHTML = day;
 
 		var chef = dataObj.chef;
 		var cellChef = firstRow.cells[1];
