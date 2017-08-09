@@ -7,6 +7,7 @@ CREATE TABLE cooking (
   chef_id INTEGER,
   sous_chef_id INTEGER,
   meal TEXT
+  budget INTEGER DEFAULT 100
 );
 
 CREATE TABLE people (
@@ -20,10 +21,10 @@ CREATE TABLE participants (
   participant_id INTEGER
 );
 
-INSERT INTO cooking (date, chef_id, sous_chef_id, meal) VALUES
-('2017-08-10', 3, 2, 'Maqluba'),
-('2017-08-11', 4, 3, 'Rice and Tofu'),
-('2017-08-12', 2, 1, 'Lasagna');
+INSERT INTO cooking (date, chef_id, sous_chef_id, meal budget) VALUES
+('2017-08-10', 3, 2, 'Maqluba', 45),
+('2017-08-11', 4, 3, 'Rice and Tofu', 70),
+('2017-08-12', 2, 1, 'Lasagna', 60);
 
 INSERT INTO people (name) VALUES
 ('Amy'),
