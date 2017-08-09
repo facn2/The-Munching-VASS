@@ -1,60 +1,60 @@
 <!DOCTYPE html>
 <html lang=en>
-<head>
-	<title>The Munching VASS</title>
-	 <meta charset="utf-8">
-	 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-	 <link rel="stylesheet" type="text/css" href="./public/style.css">
+	<head>
+		<title>The Munching VASS</title>
+		 <meta charset="utf-8">
+		 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+		 <link rel="stylesheet" type="text/css" href="./public/main.css">
 
-</head>
-<body>
-	<header>
-		<h1 class="title"> The Munching VASS </h1>
-		<h2 class="title"> Cooking Schedule for FACN2 Guesthouse </h2>
-	</header>
+	</head>
+	<body>
+		<header>
+			<h1 class="title"> The Munching VASS </h1>
+			<h2 class="title"> Cooking Schedule for FACN2 Guesthouse </h2>
+		</header>
 
-	<section>
-		<form id='form' class="form" action="/" method="post">
-			<select id="chef" value="">
-				<option value="">Chef</option>
-			</select>
+		<section>
+			<form id='form' class="form" action="/update-data" method="post">
+				<select id="date" value="" name="date">
+					<option value="">Date</option>
+				</select>
+				<select id="chef" value="" name="chef">
+					<option value="">Chef</option>
+				</select>
+				<select id="sousChef" value="" name="souschef">
+					<option value="">Sous-Chef</option>
+				</select>
+				<input type="text" name="meal" value="" placeholder="Meal">
+				<input type="text" name="budget" value="" placeholder="Budget">
+				<select id="participants" class="participants" name="participants" value="" >
+					<option value="">Participants</option>
+				</select>
+				<button type="submit" name="button">+ Add </button>
+			</form>
 
-			<select id="sousChef" value="">
-				<option value="">Sous-Chef</option>
-			</select>
+			<table id="table" class="table">
+				<tr>
+					<th>Date</th>
+					<th>Chef</th>
+					<th>Sous-Chef</th>
+					<th>Meal</th>
+					<th>Budget</th>
+					<th>Attending</th>
+				</tr>
 
-			<input type="text" name="meal" value="" placeholder="meal">
-			<input type="text" name="budget" value="" placeholder="budget">
+				<tr class="firstRow" id="firstRow">
+					<td>09.08.17</td>
+					<td>Stefano</td>
+					<td>Sajeda</td>
+					<td>Popcorn</td>
+					<td>1000</td>
+					<td></td>
+				</tr>
+			</table>
+		</section>
 
-			<select id="Participants" value="">
-				<option value="">Participants</option>
-			</select>
+		<footer>Copyright © by Munchers</footer>
 
-			<button type="submit" name="button">+ Add </button>
-		</form>
-
-		<table id='table' class='table'>
-			<tr>
-				<th>Date</th>
-				<th>Chef</th>
-				<th>Sous-Chef</th>
-				<th>Meal</th>
-				<th>Budget</th>
-				<th>Attending</th>
-			</tr>
-
-			<tr id='firstRow' class='firstRow'>
-				<td>09.08.17</td>
-				<td>Stefano</td>
-				<td>Sajeda</td>
-				<td>Popcorn</td>
-				<td>1000</td>
-				<td></td>
-			</tr>
-		</table>
-	</section>
-
-</body>
-
-<footer>Copyright by Munchers</footer>
+		<script type="text/javascript" src="./public/script.js"></script>
+	</body>
 </html>
