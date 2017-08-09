@@ -4,12 +4,12 @@
   "description": "",
   "main": "script.js",
   "directories": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "scripts": {
     "test": "nyc istanbul cover tape /tests/blah.test.js | tap-spec",
     "start": "node src/server.js",
     "devStart": "nodemon src/server.js"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
