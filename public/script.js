@@ -29,11 +29,12 @@ var updateDom = function(err, data) {
 		var cellDay = firstRow.cells[0];
 		cellDay.innerHTML = day;
 
-		var chef = dataObj.chef;
+		var chef = dataObj.chef_id;
 		var cellChef = firstRow.cells[1];
 		cellChef.innerHTML = chef;
+		console.log('chef: ', chef);
 
-		var sousChef = dataObj.sousChef;
+		var sousChef = dataObj.sous_chef_id;
 		var cellSousChef = firstRow.cells[2];
 		cellSousChef.innerHTML = sousChef;
 
