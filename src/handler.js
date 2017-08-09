@@ -40,10 +40,11 @@ const handlePublic = (request, response) => {
 }
 
 const getData = (request, response) => {
-	datajs.getData((err, res) => {
+  datajs.getData((err, res) => {
 		if (err) {
       return  console.log('Error querying database.');
 		}
+    console.log(data.js);
 		const table = JSON.stringify(res);
 		response.writeHead(200, {'Content-Type': 'application/json'});
 		response.end(table);

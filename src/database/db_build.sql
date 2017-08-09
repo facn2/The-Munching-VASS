@@ -3,7 +3,7 @@ BEGIN;
 DROP TABLE IF EXISTS cooking, people, participants cascade;
 CREATE TABLE cooking (
   id SERIAL PRIMARY KEY,
-  date DATE NOT NULL,
+  day TEXT NOT NULL,
   chef_id INTEGER,
   sous_chef_id INTEGER,
   meal TEXT
@@ -17,14 +17,14 @@ CREATE TABLE people (
 
 CREATE TABLE participants (
   id SERIAL PRIMARY KEY,
-  date_id INTEGER,
+  day_id INTEGER,
   participant_id INTEGER
 );
 
-INSERT INTO cooking (date, chef_id, sous_chef_id, meal budget) VALUES
-('2017-08-10', 3, 2, 'Maqluba', 45),
-('2017-08-11', 4, 3, 'Rice and Tofu', 70),
-('2017-08-12', 2, 1, 'Lasagna', 60);
+INSERT INTO cooking (day, chef_id, sous_chef_id, meal budget) VALUES
+('Monday', 3, 2, 'Maqluba', 45),
+('Tuesday', 4, 3, 'Rice and Tofu', 70),
+('Wednesday', 2, 1, 'Lasagna', 60);
 
 INSERT INTO people (name) VALUES
 ('Amy'),
@@ -32,7 +32,7 @@ INSERT INTO people (name) VALUES
 ('Stefano'),
 ('Vered');
 
-INSERT INTO participants (date_id, participant_id) VALUES
+INSERT INTO participants (day_id, participant_id) VALUES
 (1, 3),
 (1, 2),
 (1, 4),
