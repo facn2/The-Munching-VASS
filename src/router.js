@@ -1,17 +1,17 @@
-const handler = require('handler');
+const handler = require('./handler.js');
 
 
 const router = (request, response) => {
 	const url = request.url.split('/')[1];
 
 	if (url === ''){
-		handler.handleHome
+		handler.handleHome(response);
 	} else if (url === 'public') {
-		handler.handlePublic
-	} else if (url === 'calendar') {
-		handler.getData
-	} else if (url === '/updateCalendar') {
-		handler.updateData
+		handler.handlePublic(request, response)
+	} else if (url === 'get-data') {
+		handler.getData();
+	} else if (url === '/update-data') {
+		handler.updateTable();
 	}
 
 	// else if (url === 'addchef') {
@@ -22,9 +22,10 @@ const router = (request, response) => {
 	//  	handler.addMeal
 	// } else if (url === 'addbudget') {
 	//  	handler.addBudget
-	} else {
+	else {
 
 	}
+}
 
 
 
