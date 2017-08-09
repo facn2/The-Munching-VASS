@@ -42,18 +42,21 @@ const handlePublic = (request, response) => {
 }
 
 const getData = (request, response) => {
-  const getStuff = (tableName) =>{
-    datajs.fetchData(tableName, (err, res) => {
+  // let responseObj = {};
+  // const getStuff = (tableName, callback) =>{
+    datajs.fetchData('cooking', 'people', (err, res) => {
       if (err) {
         return console.log(`Error querying ${tableName} database.`);
       }
+      // console.log(res);
       const table = JSON.stringify(res);
+      // responseObj[`${tableName}`] = res;
       response.writeHead(200, {'Content-Type': 'application/json'});
       response.end(table);
     })
-  }
-  getStuff('cooking');
-  getStuff('people');
+  // }
+  // getStuff('people');
+  // getStuff('cooking');
 }
 
 const updateTable = (request, response) => {
