@@ -61,6 +61,16 @@ var peopleSelect = function(err, data) {
 		optionChef.innerHTML = peopleObj.name;
 		selectChef.appendChild(optionChef);
 
+		var selectSousChef = document.querySelector('#sousChef');
+		var optionSousChef = document.createElement('option');
+		optionSousChef.innerHTML = peopleObj.name;
+		selectSousChef.appendChild(optionSousChef);
+
+		var selectParticipants = document.querySelector('#participants');
+		var optionParticipants = document.createElement('option');
+		optionParticipants.innerHTML = peopleObj.name;
+		selectParticipants.appendChild(optionParticipants);
+
 	})
 }
 
