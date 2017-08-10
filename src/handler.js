@@ -41,39 +41,27 @@ const handlePublic = (request, response) => {
 }
 
 const getCookingData = (request, response) => {
-  // let responseObj = {};
-  // const getStuff = (tableName, callback) =>{
-    datajs.fetchCookingData('cooking', (err, res) => {
+    datajs.fetchCookingData((err, res) => {
       if (err) {
-        return console.log(`Error querying ${tableName} database.`);
+        return console.log(`Error querying cooking database.`);
       }
-      // console.log(res);
       const tableCooking = JSON.stringify(res);
-      // responseObj[`${tableName}`] = res;
       response.writeHead(200, {'Content-Type': 'application/json'});
       response.end(tableCooking);
     })
-  // }
-  // getStuff('people');
-  // getStuff('cooking');
+
 }
 
 const getPeopleData = (request, response) => {
-  // let responseObj = {};
-  // const getStuff = (tableName, callback) =>{
-    datajs.fetchPeopleData('people',  (err, res) => {
+
+    datajs.fetchPeopleData((err, res) => {
       if (err) {
-        return console.log(`Error querying ${tableName} database.`);
+        return console.log(`Error querying people database.`);
       }
-      // console.log(res);
       const tablePeople = JSON.stringify(res);
-      // responseObj[`${tableName}`] = res;
       response.writeHead(200, {'Content-Type': 'application/json'});
       response.end(tablePeople);
     })
-  // }
-  // getStuff('people');
-  // getStuff('cooking');
 }
 
 const updateTable = (request, response) => {
@@ -81,16 +69,14 @@ const updateTable = (request, response) => {
   request.on('data', (chunk) => {
     update += chunk;
   })
-  console.log(update);
+
   request.on('end', () => {
 
     datajs.updateData(update, (err, res) => {
       if (err) {
         return console.log('Error adding the data');
       }
-      response.writeHead(301, {
-        "Location": "/index.html"
-      });
+      response.writeHead(301, {"Location": "/"});
       response.end();
     });
   })
