@@ -2,7 +2,7 @@
   "name": "muncher-vass",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "main": "server.js",
   "directories": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

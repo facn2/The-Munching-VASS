@@ -1,4 +1,5 @@
 const dbConnection = require('../database/db_connection');
+const querystring = require('querystring');
 
 const fetchCookingData = (tableNameCooking, callback) => {
   const currentTableCooking = `SELECT * FROM cooking;`;
@@ -23,8 +24,12 @@ const fetchPeopleData = (tableNamePeople, callback) => {
   })
 }
 
-const updateData = (day, chef, souschef, meal, budget, participants, callback) => {
-  
+const updateData = (data, callback) => {
+  const day = querystring.parse(data).day;
+  const chef = querystring.parse(data).chef;
+  const souschef = querystring.parse(data).souschef;
+  const meal = querystring.parse(data).meal;
+  const budget = querystring.parse(data).budget;
   const updateQuery = 'INSERT INTO cooking(day, chef_id) VALUES ($1, $2);'
   // console.log(updateQuery)
   // const dataArray = [`'${day}'`, `'${chef}'`]
