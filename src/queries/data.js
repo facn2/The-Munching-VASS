@@ -18,7 +18,7 @@ const updateData = (data, callback) => {
   const souschef = querystring.parse(data).souschef;
   const meal = querystring.parse(data).meal;
   const budget = querystring.parse(data).budget;
-  const participants = querystring.parse(data).participants;
+  // const participants = querystring.parse(data).participants;
   console.log('day: ', day, 'chef: ', chef, 'souschef: ', souschef, 'meal: ', meal, 'budget: ', budget, 'participants: ', participants);
   const updateQuery = 'INSERT INTO cooking (day, chef, souschef, meal, budget) VALUES ($1, $2, $3, $4, $5)';
   dbConnection.query(updateQuery, [day, chef, souschef, meal, budget], (err, res) => {

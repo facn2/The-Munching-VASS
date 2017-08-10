@@ -1,10 +1,30 @@
-# The-Munching-VASS
+# The-Munching-VASS 
 
 #### Web application for FACN to view and contribute to the cooking schedule in the guesthouse.
 
 ##### Open the app on Heroku:
 
-##### How to run our app:
+```
+https://themunchingvass.herokuapp.com/
+```
+
+##### How to use our app:
+
+To check our this app, please clone this repository!
+
+```
+git clone 
+```
+
+Install all dependencies.
+```
+npm install
+```
+
+Run nodemon to start it up.
+```
+npm run devStart
+```
 
 #### User Stories:
 As a member of FACN who wants to cook at the guesthouse I want to:
@@ -22,25 +42,25 @@ As a member of FACN who is interested in coming over to eat I can:
 #### Schema:
 #### Cooking
 
-id   | chef_id | sous-chef_id | meal
-------------- | -------------
-1  | 4 | 7 | "Rice and Tofu"
-2  | 3 | 1 | "Maqluba"
+id  | chef_id | sous-chef_id | meal
+----|---------|--------------|------------
+1  	| 4       | 7			 |"Rice and Tofu"
+2  	| 3       | 1   		 | "Maqluba"
 
 #### People
 
 id   | name
----- | ----
-1  | "Sajeda"
-2  | "Amy"
+-----|--------
+1  	 | "Sajeda"
+2  	 | "Amy"
 
 #### Participants
 
 date_id   | participant_id
----- | ----
-1  | 3
-1  | 18
-2  | 6
+----------|----------------
+1  	 	  | 3
+1    	  | 18
+2    	  | 6
 
 #### Code Guidelines:
 * camelCase for all variable names
@@ -60,4 +80,5 @@ date_id   | participant_id
 Software Architecture
 
 #### Our app Wireframe:
-![alt text](./assets/wireframe.png)
+
+![Wireframe](./public/assets/wireframe.png)
