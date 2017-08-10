@@ -32,7 +32,6 @@ var updateDom = function(err, data) {
 		var chef = dataObj.chef_id;
 		var cellChef = firstRow.cells[1];
 		cellChef.innerHTML = chef;
-		console.log('chef: ', chef);
 
 		var sousChef = dataObj.sous_chef_id;
 		var cellSousChef = firstRow.cells[2];
@@ -45,11 +44,25 @@ var updateDom = function(err, data) {
 		var budget = dataObj.budget;
 		var cellBudget = firstRow.cells[4];
 		cellBudget.innerHTML = budget;
-
-		//for attending, assuming that list of people within their own object
-		// var attending = dataObj.attending
-		// var cellAttending = firstRow.cells[5]
 	})
 }
 
-makeRequest('get-data', updateDom)
+
+var peopleSelect = function(err, data) {
+	if (err) {
+		console.log('Yikes error again blah');
+	}
+	const peopleObj = JSON.parse(data);
+	console.log("peopleObj ", peopleObj);
+
+	peopleObj.forEach(function(peopleObj) {
+		var selectChef = document.querySelector('#chef');
+		var optionChef = document.createElement('option');
+		optionChef.innerHTML = peopleObj.name;
+		selectChef.appendChild(optionChef);
+
+	})
+}
+
+makeRequest('get-cooking-data', updateDom)
+makeRequest('get-people-data', selectDom)
