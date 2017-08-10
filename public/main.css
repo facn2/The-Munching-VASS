@@ -3,5 +3,28 @@
 }
 
 body {
-  background: linear-gradient(to right, #2196f3, #f44336);
+  background: #ABFC50;
+  text-align: center;
+}
+h1 {
+  font-size: 2.5em;
+}
+h2 {
+  font-size: 2em;
+}
+form {
+  font-size: 3em;
+}
+table {
+  width: 90%;
+  margin: 2em auto;
+  font-size: 1.2em;
+}
+select, input, button {
+  width: 6em;
+  font-size: 0.5em;
+  padding: 0.2em;
+  border: 0.1em solid #F0FE22;
+  background-color: #F0FEBE;
+  text-align: center;
 }
