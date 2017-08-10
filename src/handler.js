@@ -2,7 +2,6 @@ const http = require('http');
 const fs = require('fs');
 const pg = require('pg');
 const path = require('path');
-const querystring = require('querystring');
 const datajs = require('./queries/data.js');
 
 const handleHome = (request, response) => {
