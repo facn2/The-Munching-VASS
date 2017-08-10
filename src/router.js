@@ -8,8 +8,10 @@ const router = (request, response) => {
 		handler.handleHome(request, response);
 	} else if (url === 'public') {
 		handler.handlePublic(request, response)
-	} else if (url === 'get-data') {
-		handler.getData(request, response);
+	} else if (url === 'get-cooking-data') {
+		handler.getCookingData(request, response);
+	} else if (url === 'get-people-data') {
+		handler.getPeopleData(request, response);
 	} else if (url === 'update-data') {
 		handler.updateTable(request, response);
 	}

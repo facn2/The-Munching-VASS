@@ -41,18 +41,36 @@ const handlePublic = (request, response) => {
   })
 }
 
-const getData = (request, response) => {
+const getCookingData = (request, response) => {
   // let responseObj = {};
   // const getStuff = (tableName, callback) =>{
-    datajs.fetchData('cooking', 'people', (err, res) => {
+    datajs.fetchCookingData('cooking', (err, res) => {
       if (err) {
         return console.log(`Error querying ${tableName} database.`);
       }
       // console.log(res);
-      const table = JSON.stringify(res);
+      const tableCooking = JSON.stringify(res);
       // responseObj[`${tableName}`] = res;
       response.writeHead(200, {'Content-Type': 'application/json'});
-      response.end(table);
+      response.end(tableCooking);
+    })
+  // }
+  // getStuff('people');
+  // getStuff('cooking');
+}
+
+const getPeopleData = (request, response) => {
+  // let responseObj = {};
+  // const getStuff = (tableName, callback) =>{
+    datajs.fetchPeopleData('people',  (err, res) => {
+      if (err) {
+        return console.log(`Error querying ${tableName} database.`);
+      }
+      // console.log(res);
+      const tablePeople = JSON.stringify(res);
+      // responseObj[`${tableName}`] = res;
+      response.writeHead(200, {'Content-Type': 'application/json'});
+      response.end(tablePeople);
     })
   // }
   // getStuff('people');
@@ -82,6 +100,7 @@ const updateTable = (request, response) => {
 module.exports = {
   handleHome,
   handlePublic,
-  getData,
+  getCookingData,
+  getPeopleData,
   updateTable
 }
