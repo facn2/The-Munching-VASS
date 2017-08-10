@@ -3,10 +3,11 @@ BEGIN;
 DROP TABLE IF EXISTS cooking, people, participants cascade;
 CREATE TABLE cooking (
   id SERIAL PRIMARY KEY,
-  day TEXT NOT NULL,
-  chef_id INTEGER,
-  sous_chef_id INTEGER,
-  meal TEXT,
+  day VARCHAR(10) NOT NULL,
+  day_of_week INTEGER DEFAULT NULL,
+  chef_id INTEGER DEFAULT NULL,
+  sous_chef_id INTEGER DEFAULT NULL,
+  meal VARCHAR(110) DEFAULT NULL,
   budget INTEGER DEFAULT 100
 );
 
@@ -21,16 +22,38 @@ CREATE TABLE participants (
   participant_id INTEGER
 );
 
-INSERT INTO cooking (day, chef_id, sous_chef_id, meal, budget) VALUES
-('Monday', 3, 2, 'Maqluba', 45),
-('Tuesday', 4, 3, 'Rice and Tofu', 70),
-('Wednesday', 2, 1, 'Lasagna', 60);
+INSERT INTO cooking (day, day_of_week, chef_id, sous_chef_id) VALUES
+('Sunday', 1, 1, 1),
+('Monday', 2, 1, 1),
+('Tuesday', 3, 1, 1),
+('Wednesday', 4, 1, 1),
+('Thursday', 5, 1, 1),
+('Friday', 6, 1, 1),
+('Saturday', 7, 1, 1);
 
 INSERT INTO people (name) VALUES
+('<Empty>'),
 ('Amy'),
 ('Sajeda'),
 ('Stefano'),
-('Vered');
+('Vered'),
+('King'),
+('Leo'),
+('Harry'),
+('Mario'),
+('Lubes'),
+('Paul'),
+('Katia'),
+('Suha'),
+('Reem'),
+('Jack'),
+('Shireen'),
+('Zooey'),
+('Mohammed'),
+('Judy'),
+('Lee'),
+('Heather'),
+('Mavis');
 
 INSERT INTO participants (day_id, participant_id) VALUES
 (1, 3),

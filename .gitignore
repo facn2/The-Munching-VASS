@@ -100,3 +100,4 @@ node_modules/
 coverage/
 ./keys.js
 ./package-lock.json
+./config.env

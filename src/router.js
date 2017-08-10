@@ -14,6 +14,9 @@ const router = (request, response) => {
 		handler.getPeopleData(request, response);
 	} else if (url === 'update-data') {
 		handler.updateTable(request, response);
+	} else {
+		response.writeHead(404, {'Content-Type': 'text/html'});
+		response.end('<h1>Error no</h1>')
 	}
 
 }

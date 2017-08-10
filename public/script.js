@@ -1,5 +1,4 @@
-var form = document.querySelector("#form");
-var firstRow = document.querySelector("#firstRow")
+alert('Dinner is Ready!');
 
 var makeRequest = function(url, callback) {
 	var dbCall = new XMLHttpRequest();
@@ -7,7 +6,6 @@ var makeRequest = function(url, callback) {
 		if (dbCall.readyState === 4 && dbCall.status === 200) {
 			if (dbCall.responseText) {
 				callback(null, dbCall.responseText);
-				console.log("dbcall stuff" + dbCall.responseText);
 			}
 		} else {
 			callback('error' + dbCall.responseType);
@@ -21,39 +19,29 @@ var updateDom = function(err, data) {
 	if (err) {
 		console.log('Yikes error again blah');
 	}
-	const dataObj = JSON.parse(data);
-	console.log("dataobj ", dataObj);
+	var cookingObj = JSON.parse(data);
+	var table = document.querySelector('#table')
 
-	dataObj.forEach(function(dataObj) {
-		var day = dataObj.day;
-		var cellDay = firstRow.cells[0];
-		cellDay.innerHTML = day;
+	cookingObj.forEach(function(cookingObj) {
+		var row = document.createElement('tr');
+		row.setAttribute('class', 'row');
 
-		var chef = dataObj.chef_id;
-		var cellChef = firstRow.cells[1];
-		cellChef.innerHTML = chef;
+		Object.values(cookingObj).forEach(function(value) {
+			var column = document.createElement('td');
+			column.innerHTML = value;
+			row.appendChild(column);
+		})
 
-		var sousChef = dataObj.sous_chef_id;
-		var cellSousChef = firstRow.cells[2];
-		cellSousChef.innerHTML = sousChef;
-
-		var meal = dataObj.meal;
-		var cellMeal = firstRow.cells[3];
-		cellMeal.innerHTML = meal;
-
-		var budget = dataObj.budget;
-		var cellBudget = firstRow.cells[4];
-		cellBudget.innerHTML = budget;
+		table.appendChild(row)
 	})
 }
 
 
-var peopleSelect = function(err, data) {
+var peopleDom = function(err, data) {
 	if (err) {
 		console.log('Yikes error again blah');
 	}
-	const peopleObj = JSON.parse(data);
-	console.log("peopleObj ", peopleObj);
+	var peopleObj = JSON.parse(data);
 
 	peopleObj.forEach(function(peopleObj) {
 		var selectChef = document.querySelector('#chef');
@@ -65,14 +53,8 @@ var peopleSelect = function(err, data) {
 		var optionSousChef = document.createElement('option');
 		optionSousChef.innerHTML = peopleObj.name;
 		selectSousChef.appendChild(optionSousChef);
-
-		var selectParticipants = document.querySelector('#participants');
-		var optionParticipants = document.createElement('option');
-		optionParticipants.innerHTML = peopleObj.name;
-		selectParticipants.appendChild(optionParticipants);
-
 	})
 }
 
-makeRequest('get-cooking-data', updateDom)
-makeRequest('get-people-data', selectDom)
+makeRequest('get-cooking-data', updateDom);
+makeRequest('get-people-data', peopleDom);
